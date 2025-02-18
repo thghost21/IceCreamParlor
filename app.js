@@ -26,6 +26,7 @@ function orderItem(indexNumber) {
 
   drawOrder()
   drawPrice()
+  drawQty()
 }
 
 function totalOrder() {
@@ -40,6 +41,16 @@ function totalOrder() {
 
 }
 
+function totalItems() {
+  let total = 0
+  for (let i = 0; i < iceCreams.length; i++) {
+    const QtyElem = iceCreams[i];
+
+    total += QtyElem.quantity
+  }
+  return total
+}
+
 function checkout() {
   if (totalOrder() <= 0) {
     window.alert("Please Add items to Checkout")
@@ -50,6 +61,7 @@ function checkout() {
   clearCart()
   drawOrder()
   drawPrice()
+  drawQty()
 }
 
 function clearCart() {
@@ -91,4 +103,10 @@ function drawPrice() {
   priceElem.innerText = orderPrice
 }
 
+function drawQty() {
+  const QtyElem = document.getElementById('qtyItems')
+  const qtyItems = totalItems()
+  QtyElem.innerText = qtyItems
+
+}
 //!SECTION
