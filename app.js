@@ -40,6 +40,26 @@ function totalOrder() {
 
 }
 
+function checkout() {
+  if (totalOrder() <= 0) {
+    window.alert("Please Add items to Checkout")
+  } else {
+    window.alert("Your Cart Total is $" + totalOrder())
+
+  }
+  clearCart()
+  drawOrder()
+  drawPrice()
+}
+
+function clearCart() {
+  for (let i = 0; i < iceCreams.length; i++) {
+    const clearCartElem = iceCreams[i];
+    clearCartElem.quantity = 0
+  }
+
+}
+
 
 //!SECTION
 
