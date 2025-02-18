@@ -21,9 +21,22 @@ const iceCreams = [
 //SECTION - Actions/Logic
 function orderItem(indexNumber) {
   const iceCream = iceCreams[indexNumber]
-
+  iceCream.quantity++
   console.log(iceCream.name);
 
+  drawOrder()
+  drawPrice()
+}
+
+function totalOrder() {
+  let total = 0
+  for (let i = 0; i < iceCreams.length; i++) {
+    const iceCream = iceCreams[i];
+
+    total += iceCream.price * iceCream.quantity
+
+  }
+  return total
 
 }
 
@@ -33,5 +46,29 @@ function orderItem(indexNumber) {
 
 
 //SECTION - Draw
+
+
+
+function drawOrder() {
+
+  let orderContent = ''
+
+  for (let i = 0; i < iceCreams.length; i++) {
+    const orderElem = iceCreams[i];
+    if (orderElem.quantity > 0) {
+      orderContent += `<li>${orderElem.name} QTY: ${orderElem.quantity} PRICE: $${orderElem.price}</li>`
+    }
+
+  }
+  const orderElem = document.getElementById('orderList')
+  orderElem.innerHTML = orderContent
+
+}
+
+function drawPrice() {
+  const priceElem = document.getElementById('orderPrice')
+  const orderPrice = totalOrder()
+  priceElem.innerText = orderPrice
+}
 
 //!SECTION
