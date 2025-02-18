@@ -1,5 +1,5 @@
 //SECTION - Global
-const iceCream = [
+const iceCreams = [
   { name: 'Cookie Dough', price: 4, quantity: 0, type: 'scoop' },
   { name: 'Vanilla', price: 3, quantity: 0, type: 'scoop' },
   { name: 'Strawberry', price: 4, quantity: 0, type: 'scoop' },
@@ -19,6 +19,14 @@ const iceCream = [
 
 
 //SECTION - Actions/Logic
+function orderItem(indexNumber) {
+  const iceCream = iceCreams[indexNumber]
+
+  console.log(iceCream.name);
+
+
+}
+
 
 //!SECTION
 
