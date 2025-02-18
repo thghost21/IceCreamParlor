@@ -1,3 +1,9 @@
 .background {
   background-color: #FFF3C8;
 }
+
+.itemBoxResize {
+  max-height: 23vh;
+  object-fit: cover;
+  object-position: bottom;
+}
